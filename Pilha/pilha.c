@@ -30,6 +30,13 @@ void pop(Pilha *x){
 	}
 }
 
+int isEmpty(Pilha *x){
+	if(x->topo = -1){
+		return 1;
+	} else {
+		return 0;
+	}
+}
 
 int main(){
 	Pilha p;
