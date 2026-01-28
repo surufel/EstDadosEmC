@@ -1,6 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-    int main(){
-        printf("Criando repositório para Est. de Dados\n");
+typedef struct pilha{
+	int pilha[TAMANHO];
+	int topo;
+}Pilha;
+
+int main(){
+
 }
+
