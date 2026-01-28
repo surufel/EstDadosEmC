@@ -22,16 +22,16 @@ void push(int valor, Pilha *x){
 }
 
 void pop(Pilha *x){
-	if(x->topo = -1){
+	if(x->topo == -1){
 		printf("A pilha está vazia, não tem como dar pop");
 	} else {
-	printf("Elemento retirado: %d\n", x->pilha[x->topo]);
 	x->topo--;
+	printf("Elemento retirado: %d\n", x->pilha[x->topo]);
 	}
 }
 
 int isEmpty(Pilha *x){
-	if(x->topo = -1){
+	if(x->topo == -1){
 		return 1;
 	} else {
 		return 0;
@@ -41,10 +41,14 @@ int isEmpty(Pilha *x){
 int main(){
 	Pilha p;
 	p.topo = 0;
-
-	p.pilha[p.topo] = 100; // Empilhando o numero 100
-	p.topo++; // Total na pilha: 1
-	p.topo--; // Total na pilha: 0
+	
+	push(2, &p); // Adiciona 2 para o endereço da pilha p
+	push(4, &p);
+	push(6, &p);
+	push(8, &p);
+	pop(&p);
+	pop(&p);
+	printf("Topo da pilha: %d\n", p.topo);
 	return 0;
 }
 
