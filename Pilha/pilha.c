@@ -8,12 +8,25 @@ typedef struct pilha{
 	int topo;
 }Pilha;
 
+void push(int valor, Pilha *x);
+void pop(Pilha *x);
+int isEmpty(Pilha *x);
+
 void push(int valor, Pilha *x){
 	if(x->topo < TAMANHO){
 	x->pilha[x->topo] = valor;
 	x->topo++;
 	} else {
 	printf("Pilha estourou, ela esta cheia");
+	}
+}
+
+void pop(Pilha *x){
+	if(x->topo = -1){
+		printf("A pilha está vazia, não tem como dar pop");
+	} else {
+	printf("Elemento retirado: %d\n", x->pilha[x->topo]);
+	x->topo--;
 	}
 }
 
