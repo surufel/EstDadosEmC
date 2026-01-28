@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define TAMANHO 20 // de 0 a 19
+#define TAMANHO 20 // de 1 a 20 elementos, 0 seria pilha vazia
 
 typedef struct pilha{
 	int pilha[TAMANHO];
@@ -11,6 +11,7 @@ typedef struct pilha{
 void push(int valor, Pilha *x);
 void pop(Pilha *x);
 int isEmpty(Pilha *x);
+void imprimirPilha(Pilha *x);
 
 void push(int valor, Pilha *x){
 	if(x->topo < TAMANHO){
@@ -30,8 +31,16 @@ void pop(Pilha *x){
 	}
 }
 
+void imprimirPilha(Pilha *x){
+	printf("[");
+	for(int i= 0; i < (x->topo); i++){
+		printf("%d ",x->pilha[i]);
+	}
+	printf("]\n");
+}
+
 int isEmpty(Pilha *x){
-	if(x->topo == -1){
+	if(x->topo == 0){
 		return 1;
 	} else {
 		return 0;
@@ -46,9 +55,13 @@ int main(){
 	push(4, &p);
 	push(6, &p);
 	push(8, &p);
+	push(10, &p);
+
 	pop(&p);
 	pop(&p);
-	printf("Topo da pilha: %d\n", p.topo);
+
+	imprimirPilha(&p);
+	printf("Topo da pilha (indice): %d\n", p.topo);
 	return 0;
 }
 
