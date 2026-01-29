@@ -51,17 +51,22 @@ int main(){
 	Pilha p;
 	p.topo = 0;
 	
+	imprimirPilha(&p);
+
 	push(2, &p); // Adiciona 2 para o endereço da pilha p
 	push(4, &p);
 	push(6, &p);
 	push(8, &p);
 	push(10, &p);
 
+	imprimirPilha(&p);
+
 	pop(&p);
 	pop(&p);
 
 	imprimirPilha(&p);
-	printf("Topo da pilha (indice): %d\n", p.topo);
+
+	printf("Topo da pilha (indice comecando por 1): %d\n", p.topo);
 	return 0;
 }
 
